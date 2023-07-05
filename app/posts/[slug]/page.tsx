@@ -4,6 +4,8 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
 import Ratings from "@/app/components/Ratings";
 import CustomImage from "@/app/components/Image";
+import Location from "@/app/components/Location";
+import OpeningHours from "@/app/components/OpeningHours";
 import Link from "next/link";
 
 const mdxComponents: MDXComponents = {
@@ -16,16 +18,10 @@ const mdxComponents: MDXComponents = {
   p: ({ children }) => (
     <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>
   ),
-  img: ({
-    className,
-    alt,
-    ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className="rounded-md border" alt={alt} {...props} />
-  ),
   Ratings,
   CustomImage,
+  Location,
+  OpeningHours,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
@@ -33,8 +29,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   if (!post) notFound();
 
   const MDXContent = useMDXComponent(post.body.code);
-
-  //   console.log(post);
   return (
     <article className="mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
@@ -42,6 +36,11 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
           {new Intl.DateTimeFormat("en-US").format(new Date(post.date))}
         </time>
         <h1 className="text-3xl font-bold">{post.title}</h1>
+      </div>
+      <Ratings breakdown={post.breakdown} />
+      <div className="mx-auto grid w-full mb-3 max-w-2xl grid-cols-1 gap-2 sm:grid-cols-2">
+        <Location location={post.location} />
+        <OpeningHours hours={post.openingHours} />
       </div>
       <MDXContent components={mdxComponents} />
     </article>
