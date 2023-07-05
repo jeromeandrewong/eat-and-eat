@@ -1,5 +1,4 @@
 import { Post } from "contentlayer/generated";
-// ^ You're probably going to get an error, but we'll fix it later
 import Link from "next/link";
 
 export default function PostCard(post: Post) {

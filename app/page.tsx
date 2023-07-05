@@ -1,5 +1,4 @@
 import { allPosts } from "contentlayer/generated";
-// ^ You're probably going to get an error, but we'll fix it later
 import PostCard from "../app/components/PostCard";
 
 export default function Home() {
