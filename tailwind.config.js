@@ -8,6 +8,10 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      railway: ["Railway", "sans-serif"],
+    },
     extend: {
       colors: {
         primary: "#F5EFE4",
