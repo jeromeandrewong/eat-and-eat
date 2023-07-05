@@ -11,6 +11,7 @@ export const Post = defineDocumentType(() => ({
     town: { type: "string", required: true },
     location: { type: "string", required: true },
     website: { type: "string", required: true },
+    openingHours: { type: "string", required: true },
   },
   computedFields: {
     url: {

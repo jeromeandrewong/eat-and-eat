@@ -2,13 +2,14 @@ import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
-
+import Ratings from "@/app/components/Ratings";
+import CustomImage from "@/app/components/Image";
 import Link from "next/link";
 
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
   h2: ({ children }) => (
-    <h2 className="mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0">
+    <h2 className="mt-10 mb-5 scroll-m-20  pb-1 text-3xl font-semibold tracking-tight first:mt-0">
       {children}
     </h2>
   ),
@@ -23,6 +24,8 @@ const mdxComponents: MDXComponents = {
     // eslint-disable-next-line @next/next/no-img-element
     <img className="rounded-md border" alt={alt} {...props} />
   ),
+  Ratings,
+  CustomImage,
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
@@ -31,6 +34,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
 
   const MDXContent = useMDXComponent(post.body.code);
 
+  //   console.log(post);
   return (
     <article className="mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
