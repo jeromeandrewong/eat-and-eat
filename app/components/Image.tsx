@@ -14,7 +14,7 @@ export default function CustomImage({
         src={image}
         width={500}
         height={500}
-        className="h-full w-full rounded-lg object-cover"
+        className="-z-10 mb-2 aspect-[9/8] w-full rounded-2xl object-cover  transition-transform group-hover:scale-[1.02] "
       />
     </>
   );
