@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
 
 const contact = () => {

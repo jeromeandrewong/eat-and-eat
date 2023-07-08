@@ -7,8 +7,9 @@ const Nav = () => {
       <div className="flex justify-evenly gap-2 lg:flex-col">
         {NavbarItems.map((item, index) => {
           return (
-            <Link href={item.slug} key={index}>
+            <Link href={item.slug} key={index} aria-label={item.name}>
               <button
+                aria-label={item.name}
                 key={index}
                 className="flex h-12  items-center justify-center"
               >
