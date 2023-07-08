@@ -2,10 +2,8 @@ import Image from "next/image";
 
 export default function CustomImage({
   image,
-  classname,
 }: {
   image: string;
-  classname?: string;
 }) {
   return (
     <>
