@@ -1,6 +1,6 @@
 import React from "react";
 
-const scoring = (props: { html: string }) => {
+const scoring = () => {
   return (
     <div className="relative flex h-full min-h-screen w-full flex-col items-center justify-center p-8">
       <section className="mb-12 flex w-full flex-col justify-between gap-6 md:mt-0 lg:mt-0">
