@@ -17,7 +17,6 @@ const Hero = () => {
         <Image
           src={`/eatandeat.png`}
           alt="hero"
-          className="select-none"
           width="380"
           height="100"
           priority
