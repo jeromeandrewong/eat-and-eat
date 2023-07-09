@@ -7,7 +7,6 @@ import CustomImage from "@/app/components/Image";
 import Location from "@/app/components/Location";
 import OpeningHours from "@/app/components/OpeningHours";
 import Link from "next/link";
-import Footer from "@/app/components/Footer";
 
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
@@ -35,7 +34,11 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     <article className="mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
         <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
-          {new Intl.DateTimeFormat("en-US").format(new Date(post.date))}
+          {new Intl.DateTimeFormat("en", {
+            day: "2-digit",
+            month: "short",
+            year: "2-digit",
+          }).format(new Date(post.date))}
         </time>
         <h1 className="hover:scale-105 duration-300 text-center text-3xl text-secondary underline decoration-wavy underline-offset-8 font-bold font-railway">
           <Link
