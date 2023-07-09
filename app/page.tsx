@@ -4,13 +4,22 @@ import Hero from "./components/Hero";
 import CardGridLayout from "./components/CardGridLayout";
 import { Card } from "./components/Card";
 import { calculateScore } from "@/lib/calculateScore";
-import { motion } from "framer-motion";
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/framerMotionVariant";
+import { useState } from "react";
+import Fuse from "fuse.js";
+import Search from "./components/Search";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+  const options = {
+    inludeScore: true,
+    keys: ["title", "town", "location"],
+  };
   const posts = allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+  const fuse = new Fuse(posts, options);
+  const result = fuse.search(query);
+  const allPostsFiltered = query ? result.map((post) => post.item) : posts;
 
   return (
     <>
@@ -21,14 +30,12 @@ export default function Home() {
             <div className="text-center text-xl  font-bold tracking-tight md:text-start lg:text-3xl">
               Cafes / Restaurants
             </div>
+            <Search query={query} setQuery={setQuery} />
           </div>
           <CardGridLayout>
-            {posts.map((post) => {
+            {allPostsFiltered.map((post) => {
               return (
-                <motion.div
-                  key={post.title}
-                  variants={FADE_DOWN_ANIMATION_VARIANTS}
-                >
+                <div key={post.title}>
                   <Card
                     cover={post.cover}
                     title={post.title}
@@ -38,7 +45,7 @@ export default function Home() {
                       post.breakdown.split("").map(Number)
                     )}
                   />
-                </motion.div>
+                </div>
               );
             })}
           </CardGridLayout>

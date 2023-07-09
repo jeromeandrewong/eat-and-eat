@@ -49,18 +49,6 @@ export default function RootLayout({
 
             <div className="mt-16 lg:mt-0 p-8">{children}</div>
           </div>
-          {/* footer */}
-          <div className="fixed  bottom-1 right-1 flex h-10 w-10 items-center justify-center rounded-full bg-accent text-center ">
-            <div className="hidden sm:hidden md:hidden lg:hidden xl:block">
-              XL
-            </div>
-            <div className="hidden sm:hidden md:hidden lg:block xl:hidden">
-              LG
-            </div>
-            <div className="hidden md:block lg:hidden  ">MD</div>
-            <div className="hidden sm:block md:hidden lg:hidden">SM</div>
-            <div className=" sm:hidden md:hidden lg:hidden">XS</div>
-          </div>
         </main>
       </body>
     </html>
