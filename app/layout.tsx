@@ -1,6 +1,7 @@
 import "./globals.css";
 import "@fontsource/poppins";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 export const metadata = {
   metadataBase: new URL("https://eatandeat.jeromeandre.dev"),
@@ -49,6 +50,7 @@ export default function RootLayout({
 
             <div className="mt-16 lg:mt-0 p-8">{children}</div>
           </div>
+          <Footer />
         </main>
       </body>
     </html>

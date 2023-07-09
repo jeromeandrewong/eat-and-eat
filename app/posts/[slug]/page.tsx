@@ -7,6 +7,7 @@ import CustomImage from "@/app/components/Image";
 import Location from "@/app/components/Location";
 import OpeningHours from "@/app/components/OpeningHours";
 import Link from "next/link";
+import Footer from "@/app/components/Footer";
 
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
