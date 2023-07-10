@@ -16,19 +16,13 @@ export const metadata = {
     "MDX",
     "Tailwind CSS",
     "Blog",
+    "contentlayer",
   ],
   openGraph: {
-    title: "Eats and Eats",
+    title: "Eat and Eat",
     description: "Jerome's Food Review Blog",
     url: "https://eatandeat.jeromeandre.dev",
-    siteName: "Eats and Eats",
-    images: [
-      {
-        url: "/eatandeat.png",
-        width: 800,
-        height: 600,
-      },
-    ],
+    siteName: "Eat and Eat",
     locale: "en_US",
     type: "website",
   },
