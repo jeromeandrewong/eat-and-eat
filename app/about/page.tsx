@@ -4,10 +4,7 @@ const about = () => {
   return (
     <div className="relative flex h-full min-h-screen w-full flex-col items-center justify-center p-8">
       <section className="mb-12 flex w-full flex-col justify-between gap-6 md:mt-0 lg:mt-0">
-        <h1
-          className=" font-railway  mb-6 text-center text-3xl font-bold text-secondary underline decoration-wavy underline-offset-8;
-"
-        >
+        <h1 className=" font-railway  mb-6 text-center text-3xl font-bold text-secondary underline decoration-wavy underline-offset-8">
           About
         </h1>
         <div className="text-lg leading-relaxed gap-5 flex flex-col">
