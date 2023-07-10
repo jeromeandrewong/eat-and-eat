@@ -20,15 +20,6 @@ export const metadata = {
     "Blog",
     "contentlayer",
   ],
-  openGraph: {
-    images: "/opengraph-image.png",
-    title: "Eat and Eat",
-    description: "Jerome's Food Review Blog",
-    url: "https://eatandeat.jeromeandre.dev",
-    siteName: "Eat and Eat",
-    locale: "en_US",
-    type: "website",
-  },
 };
 
 export default function RootLayout({
