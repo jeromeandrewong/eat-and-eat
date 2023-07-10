@@ -13,4 +13,4 @@
 
 ## Preview
 
-![](/public/readme1.png)
+![](/public/readme.png)

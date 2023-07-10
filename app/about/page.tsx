@@ -1,5 +1,9 @@
 import React from "react";
-
+export const metadata = {
+  title: {
+    default: "About",
+  },
+};
 const about = () => {
   return (
     <div className="relative flex h-full min-h-screen w-full flex-col items-center justify-center p-8">

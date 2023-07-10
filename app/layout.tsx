@@ -4,8 +4,10 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  metadataBase: new URL("https://eatandeat.jeromeandre.dev"),
-  title: "Eats and Eats",
+  title: {
+    default: "eatandeat",
+    template: "eatandeat | %s",
+  },
   description: "Jerome's Food Review Blog",
   creator: "Jerome Wong",
   keywords: [
@@ -19,6 +21,7 @@ export const metadata = {
     "contentlayer",
   ],
   openGraph: {
+    images: "/opengraph-image.png",
     title: "Eat and Eat",
     description: "Jerome's Food Review Blog",
     url: "https://eatandeat.jeromeandre.dev",

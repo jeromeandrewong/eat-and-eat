@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from "react-icons/fi";
-
+export const metadata = {
+  title: {
+    default: "Contact",
+  },
+};
 const contact = () => {
   return (
     <div className="relative flex  h-screen w-full flex-col items-center justify-center p-8">
