@@ -16,7 +16,7 @@ const mdxComponents: MDXComponents = {
     </h2>
   ),
   p: ({ children }) => (
-    <p className="text-md sm:text-lg leading-relaxed [&:not(:first-child)]:mt-6 font-poppins">
+    <p className="text-sm sm:text-lg leading-relaxed [&:not(:first-child)]:mt-6 font-poppins">
       {children}
     </p>
   ),
