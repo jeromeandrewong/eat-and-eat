@@ -1,4 +1,4 @@
-type PostType = {
+export type PostType = {
   slug: string;
   title: string;
   date: string;
@@ -9,4 +9,12 @@ type PostType = {
   website: string;
 };
 
-export default PostType;
+export type SiteConfig = {
+  name: string;
+  description: string;
+  url: string;
+  ogImage: string;
+  links: {
+    twitter: string;
+  };
+};

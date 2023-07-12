@@ -1,5 +1,5 @@
 import { calculateScore } from "@/lib/calculateScore";
-import PostType from "@/types/types";
+import { PostType } from "@/types/types";
 import React from "react";
 
 const Ratings = ({ breakdown }: { breakdown: string }) => {

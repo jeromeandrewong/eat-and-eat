@@ -13,4 +13,4 @@
 
 ## Preview
 
-![](/public/readme.png)
+![](/public/og.jpg)

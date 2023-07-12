@@ -2,26 +2,46 @@ import "./globals.css";
 import "@fontsource/poppins";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { siteConfig } from "@/lib/site";
 
 export const metadata = {
   title: {
-    default: "eatandeat",
-    template: "eatandeat | %s",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: "Jerome's Food Review Blog",
-  creator: "Jerome Wong",
+  description: siteConfig.description,
   keywords: [
     "Next.js",
     "React",
-    "JavaScript",
-    "TypeScript",
-    "MDX",
     "Tailwind CSS",
+    "Server Components",
     "Blog",
     "contentlayer",
+    "MDX",
   ],
+  authors: [
+    {
+      name: "Jerome",
+      url: "https://github.com/jeromeandrewong",
+    },
+  ],
+  creator: "Jerome",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og.jpg`],
+    creator: "@jeromeandrewong",
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
