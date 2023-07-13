@@ -11,12 +11,12 @@ import Link from "next/link";
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
   h2: ({ children }) => (
-    <h2 className="mt-10 mb-5 scroll-m-20  pb-1 text-3xl font-semibold tracking-tight first:mt-0 font-railway">
+    <h2 className="mt-8 scroll-m-20  pb-1 text-3xl font-semibold tracking-tight first:mt-0 font-railway">
       {children}
     </h2>
   ),
   p: ({ children }) => (
-    <p className="text-sm sm:text-lg leading-relaxed [&:not(:first-child)]:mt-6 font-poppins">
+    <p className="text-sm sm:text-lg leading-relaxed [&:not(:first-child)]:mt-5 font-poppins">
       {children}
     </p>
   ),
@@ -27,7 +27,12 @@ const mdxComponents: MDXComponents = {
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  console.log(allPosts[3]._raw.flattenedPath);
+  console.log("posts/" + params.slug);
+  const post = allPosts.find(
+    (post) => post._raw.flattenedPath === "posts/" + params.slug
+  );
+  console.log(post);
   if (!post) notFound();
   const MDXContent = useMDXComponent(post.body.code);
   return (
@@ -66,7 +71,9 @@ export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
+  const post = allPosts.find(
+    (post) => post._raw.flattenedPath === "posts/" + params.slug
+  );
   if (!post) notFound();
   return { title: post.title };
 };

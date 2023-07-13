@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from "@contentlayer/source-files";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `posts/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
@@ -17,14 +17,35 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (post) => `/${post._raw.flattenedPath}`,
+    },
+  },
+}));
+
+export const Page = defineDocumentType(() => ({
+  name: "Page",
+  filePathPattern: `pages/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (page) => `/${page._raw.flattenedPath}`,
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: "posts",
-  documentTypes: [Post],
+  contentDirPath: "./content",
+  documentTypes: [Post, Page],
   mdx: {
     remarkPlugins: [],
     rehypePlugins: [],

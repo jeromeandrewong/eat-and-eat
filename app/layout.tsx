@@ -56,7 +56,7 @@ export default function RootLayout({
               <Nav />
             </div>
 
-            <div className="mt-16 lg:mt-0 p-8">{children}</div>
+            <div className="mt-16 lg:mt-0 p-8 lg:p-0">{children}</div>
           </div>
           <Footer />
         </main>
