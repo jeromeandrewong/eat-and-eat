@@ -1,6 +1,6 @@
 # Food Blog
 
-- Personal Food Blog do document and share my cafe/restaurant experiences.
+- Personal Food Blog to document and share my cafe/restaurant experiences.
 
 ## Techstack
 
